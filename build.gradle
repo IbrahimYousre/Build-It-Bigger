@@ -20,3 +20,12 @@ allprojects {
         google()
     }
 }
+
+// I am trying to implement the optional task that Launches the GCE local development server,
+// Runs all tests, and Shuts the server down again
+// I am not sure if this is the right way please give me feedback on how to do it right
+// To tie it all together, create a Gradle task that:
+
+task integerationTest(type: GradleBuild) {
+    tasks = ['appengineStart', 'test', 'appengineStop']
+}
