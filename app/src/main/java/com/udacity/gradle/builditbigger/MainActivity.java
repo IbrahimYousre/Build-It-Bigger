@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         new JokeTask(this).execute();
     }
 
-    public class JokeTask extends AsyncTask<Void, Void, String> {
+    public static class JokeTask extends AsyncTask<Void, Void, String> {
         Context context;
 
         public JokeTask(Context context) {
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
                     }).build();
 
             try {
-                return myApiService.sayHi("Hima").execute().getData();
+                return myApiService.tellJoke().execute().getData();
             } catch (IOException e) {
-                Log.e("", "", e);
+                Log.e("JokeTask", "Error", e);
                 return e.getMessage();
             }
         }
