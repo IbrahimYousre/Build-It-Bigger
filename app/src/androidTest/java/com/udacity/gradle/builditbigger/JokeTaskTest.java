@@ -22,7 +22,7 @@ public class JokeTaskTest extends InstrumentationTestCase {
     }
 
     public final void testResultNonEmpty() throws Throwable {
-        final MainActivity.JokeTask jokeTask = new MainActivity.JokeTask(null);
+        final MainActivity.JokeTask jokeTask = new MainActivity.JokeTask(null, null);
         final String[] result = new String[1];
         final CountDownLatch signal = new CountDownLatch(1);
         AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
